@@ -8,10 +8,11 @@ import 'package:tittok_clone/features/authentication/widgets/auth_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
+
   void _onLoginTap(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => LoginScreen(),
+        builder: (context) => const LoginScreen(),
       ),
     );
   }
@@ -19,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
   void _onEmailTap(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => UsernameScreen(),
+        builder: (context) => const UsernameScreen(),
       ),
     );
   }
@@ -36,7 +37,7 @@ class SignUpScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Gaps.v80,
-              Text(
+              const Text(
                 "Sign up for TikTok",
                 style: TextStyle(
                   fontSize: Sizes.size24,
@@ -44,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               Gaps.v20,
-              Text(
+              const Text(
                 "Create a profile, follow other accounts, make your own videos, and more.",
                 style: TextStyle(
                   fontSize: Sizes.size16,
@@ -55,20 +56,15 @@ class SignUpScreen extends StatelessWidget {
               Gaps.v40,
               GestureDetector(
                 onTap: () => _onEmailTap(context),
-                child: AuthBuitton(
-                  text: "Use email & password",
+                child: const AuthBuitton(
                   icon: FaIcon(FontAwesomeIcons.user),
+                  text: "Use email & password",
                 ),
               ),
-              Gaps.v14,
-              AuthBuitton(
-                text: "Continue with Apple",
+              Gaps.v16,
+              const AuthBuitton(
                 icon: FaIcon(FontAwesomeIcons.apple),
-              ),
-              Gaps.v14,
-              AuthBuitton(
-                text: "Continue with FaceBook",
-                icon: FaIcon(FontAwesomeIcons.facebook),
+                text: "Continue with Apple",
               ),
             ],
           ),
@@ -79,7 +75,7 @@ class SignUpScreen extends StatelessWidget {
         elevation: 2,
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            vertical: Sizes.size1,
+            vertical: Sizes.size10,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

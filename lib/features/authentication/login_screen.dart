@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tittok_clone/constants/gaps.dart';
 import 'package:tittok_clone/constants/sizes.dart';
-import 'package:tittok_clone/features/authentication/username_screen.dart';
 import 'package:tittok_clone/features/authentication/widgets/auth_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -10,14 +9,6 @@ class LoginScreen extends StatelessWidget {
 
   void _onSignUpTap(BuildContext context) {
     Navigator.of(context).pop();
-  }
-
-  void _onEmailTap(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => UsernameScreen(),
-      ),
-    );
   }
 
   @override
@@ -29,7 +20,7 @@ class LoginScreen extends StatelessWidget {
             horizontal: Sizes.size40,
           ),
           child: Column(
-            children: [
+            children: const [
               Gaps.v80,
               Text(
                 "Log in to TikTok",
@@ -48,22 +39,14 @@ class LoginScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Gaps.v40,
-              GestureDetector(
-                onTap: () => _onEmailTap(context),
-                child: AuthBuitton(
-                  text: "Use email & password",
-                  icon: FaIcon(FontAwesomeIcons.user),
-                ),
-              ),
-              Gaps.v14,
               AuthBuitton(
-                text: "Continue with Apple",
+                icon: FaIcon(FontAwesomeIcons.user),
+                text: "Use email & password",
+              ),
+              Gaps.v16,
+              AuthBuitton(
                 icon: FaIcon(FontAwesomeIcons.apple),
-              ),
-              Gaps.v14,
-              AuthBuitton(
-                text: "Continue with FaceBook",
-                icon: FaIcon(FontAwesomeIcons.facebook),
+                text: "Continue with Apple",
               ),
             ],
           ),
